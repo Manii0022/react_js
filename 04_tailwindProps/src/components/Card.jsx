@@ -4,7 +4,7 @@ function Card({username="anonymous  "}){        // anonymous is the default valu
     console.log(username);  
     
     return(
-    <div className="max-w-xs p-6 rounded-md shadow-md bg-black">
+    <div className="max-w-xs p-6 rounded-md shadow-md bg-black-300">
         <img
           src="https://www.devui.in/pc_guy.png"
           alt=""

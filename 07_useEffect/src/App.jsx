@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 import './App.css'
 
@@ -33,8 +33,27 @@ function App() {
 
   const btn = useRef()
 
-  console.log(btn.current);
-  
+  // console.log(btn.current);  // btn.current is undefined at this moment  because the log runs during the render phase,
+  //  before React has had a chance to attach the ref to the <button> element.
+
+  /*
+  Thus, Log or access btn.current inside useEffect (or a callback ref) if you need the real DOM node; 
+  during the render it will always be undefined.  ie
+   */
+  useEffect(() => {
+    console.log(btn.current);   // <button>…</button>
+  }, []);     // this is variation 2 of useEffect ... (above)
+
+
+  const sayHello = useCallback(() => {
+    console.log("hello ", count);
+  }, [count])
+
+  const handleClick=()=>{
+    sayHello()
+    setCount(count+1)
+  }
+
   return (
     <>
 
@@ -45,10 +64,13 @@ function App() {
 
         <button ref={btn}
           onClick={() => {
-            setCount((count) =>  {
+            setCount((count) => {
               console.log("count is being clicked");
-              return count+1} )        // explicit return concept
+              return count + 1
+            })        // explicit return concept
           }}>click me {count}</button>
+
+        <button onClick={handleClick}>Say Hello {count} </button>
 
       </div>
 

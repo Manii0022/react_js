@@ -7,9 +7,8 @@ function useCurrencyInfo(currency){
         .then(res=>res.json())    // convert from string to json and return
         .then(res => setData(res[currency]))     // receive json and setData to currency res.currency = res[currency]
     },[currency])
-    console.log(data);
     return data
     
 }
 
-export default useCurrencyInfo
+export default useCurrencyInfo;

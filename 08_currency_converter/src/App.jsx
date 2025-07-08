@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { InputBox } from './components'
 import useCurrencyInfo from './hooks/useCurrencyInfo'
 import './App.css'
@@ -11,6 +11,7 @@ function App() {
 
   const currencyInfo = useCurrencyInfo(from)
   const options = Object.keys(currencyInfo)
+  
 
   const swap = () => {
     setFrom(to)
@@ -35,7 +36,7 @@ function App() {
                     <form
                         onSubmit={(e) => {
                             e.preventDefault();
-                            convert()
+                            convert()  ,{/*fgafgafga */}
                            
                         }}
                     >
@@ -47,7 +48,7 @@ function App() {
                                 onAmountChange={(amount)=>{
                                   setAmount(amount)
                                 }}
-                                onCurerncyChange={(currency)=>{
+                                onCurrencyChange={(amount)=>{
                                   setAmount(amount)
                                 }}
                                 selectCurrency={from}
@@ -70,11 +71,12 @@ function App() {
                                 label="To"
                                 amount = {convertedAmount}
                                 currencyOptions={options}
-                                onCurerncyChange={(currency)=>{
+                                onCurrencyChange={(currency)=>{
                                   setTo(currency)
                                 }}
                                 selectCurrency={from}
-                                amountDisable
+                                amountDisable 
+                                // iss box me onAmountChange nhi diya bcoz user, from me value daalega na ki to me 
                                 
                             />
                         </div>

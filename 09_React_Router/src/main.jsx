@@ -9,6 +9,7 @@ import About from './components/About/About.jsx'
 import Contact from './components/Contact/Contact.jsx'
 import User from './components/User/User.jsx'
 import Github , {githubInfoLoader} from './components/Github/Github.jsx'
+import Error from './components/Error/Error.jsx'
 
 // const router = createBrowserRouter([
 //   {
@@ -35,15 +36,17 @@ import Github , {githubInfoLoader} from './components/Github/Github.jsx'
 const router = createBrowserRouter(
   createRoutesFromElements(   // sbse pehla parent path,, fir nesting hoti ja rhi hai 
     <Route path = "/" element={<Layout/>} >
-      <Route path='' element={<Home/>}/>
-      <Route path='about' element={<About/>}/>  
+      <Route index={true} element={<Home/>}/>    {/* index={true} is same as path : "" ...index = true is for default path */}
+      <Route path='about' element={<About/>}/>   
       <Route path='contact' element={<Contact/>}/>
       <Route path='user/:userId' element={<User/>}/>
       <Route 
-      loader={githubInfoLoader}
       path='github' 
       element={<Github/>}
+      loader={githubInfoLoader}
       />
+      <Route path='*' element={<Error/>}/>
+      
 
     </Route>
   )

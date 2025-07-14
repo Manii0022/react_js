@@ -3,14 +3,14 @@ import { useTodo } from "../contexts/TodoContext";
 
 function TodoItem({ todo }) {
     const { updateTodo, deleteTodo, toggleComplete } = useTodo()
-    const [todoMsg , setTodoMsg] = useState(todo.todo)
-    const [isTodoEditable , setIsTodoEditable] = useState(false)
+    const [todoMsg, setTodoMsg] = useState(todo.todo)
+    const [isTodoEditable, setIsTodoEditable] = useState(false)
 
-    const editTodo = ()=>{
-        updateTodo(todo.id , {...todo,todo:todoMsg})
+    const editTodo = () => {
+        updateTodo(todo.id, { ...todo, todo: todoMsg })
         setIsTodoEditable(false)
     }
-    const toggleCompleted = ()=>{
+    const toggleCompleted = () => {
         toggleComplete(todo.id)
     }
 
@@ -59,6 +59,7 @@ function TodoItem({ todo }) {
             >
                 ❌
             </button>
+
         </div>
     );
 }

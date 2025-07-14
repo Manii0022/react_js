@@ -55,7 +55,7 @@ function App() {
           </div>
           <div className="flex flex-wrap gap-y-3">
             {/*Loop and Add TodoItem here */}
-            {todos.map((todo)=>(
+            {todos.map((todo)=>(     // this is to show the previous saved todos 
               <div key={todo.id}
               className='w-full'>
                 <TodoItem todo={todo}/>

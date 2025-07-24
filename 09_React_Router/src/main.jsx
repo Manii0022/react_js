@@ -46,7 +46,6 @@ const router = createBrowserRouter(
       loader={githubInfoLoader}
       />
       <Route path='*' element={<Error/>}/>
-      
     </Route>
   )
 )

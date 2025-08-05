@@ -1,4 +1,3 @@
-import React from 'react'
 import './App.css'
 import UserContextProvider from './context/UserContextProvider'
 import Login from './components/Login'

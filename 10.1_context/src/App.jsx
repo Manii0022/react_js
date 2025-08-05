@@ -1,6 +1,5 @@
 import { createContext, useState } from 'react'
 import './App.css'
-import ChildA from './components/ChildA'
 import ChildC from './components/childC'
 import ChildB from './components/ChildB'
 

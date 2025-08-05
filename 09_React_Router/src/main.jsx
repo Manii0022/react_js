@@ -33,7 +33,7 @@ import Error from './components/Error/Error.jsx'
 
 // another way of creating router..more readable way 
 const router = createBrowserRouter(
-  createRoutesFromElements(   // sbse pehla parent path,, fir nesting hoti ja rhi hai 
+  createRoutesFromElements(   // sbse pehle parent path,, fir nesting hoti ja rhi hai 
     <Route path = "/" element={<Layout/>} >
       <Route index={true} element={<Home/>}/>    {/* index={true} is same as path : "" ...index = true is for default path */}
       <Route path='about' element={<About/>}/>   

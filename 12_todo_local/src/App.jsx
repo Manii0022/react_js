@@ -55,7 +55,8 @@ function App() {
           </div>
           <div className="flex flex-wrap gap-y-3">
             {/*Loop and Add TodoItem here */}
-            {todos.map((todo)=>(     // this is to show the previous saved todos 
+            {[...todos].reverse().map((todo)=>(     // this is to show the previous saved todos 
+            // [...todos] this is array of saved todos and .reverse() se unhe reverse krdiya 
               <div key={todo.id}
               className='w-full'>
                 <TodoItem todo={todo}/>

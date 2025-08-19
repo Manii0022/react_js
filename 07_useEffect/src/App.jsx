@@ -12,7 +12,7 @@ function App() {
 
   // variation : 2 ... first render only
   // useEffect(()=>{
-  //   alert("i will run on firsts render only")
+  //   alert("i will run on first render only")
   // },[])
 
   // variation : 3 ... every time some variable is updated
@@ -31,6 +31,7 @@ function App() {
 
   // },[count]) 
 
+// useRef => used to create references , just like in js (QuerySelector, getElementById .etc)
   const btn = useRef()
 
   // console.log(btn.current);  // btn.current is undefined at this moment  because the log runs during the render phase,

@@ -31,7 +31,7 @@ function App() {
   const copyPasswordToClipboard = useCallback(()=>{
     passwordRef.current?.select()      // select waala effect dene k liye ... ? is for optional ..to handle null
     passwordRef.current?.setSelectionRange(0,length)     // selects custom length
-    window.navigator.clipboard.writeText(password)      // since we are working in core reat, we are able to write window. directly
+    window.navigator.clipboard.writeText(password)      // since we are working in core react, we are able to write window. directly
                                                         // in next.js , due to server side rendering , window object is not available 
   },[password])
 

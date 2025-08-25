@@ -1,12 +1,13 @@
-import React from "react";
+import { useState } from "react";
+import React  from "react";
 
 import UserContext from "./UserContext";
 
 const UserContextProvider = ({children})=>{   // children is the placeholder, aage jaake isme componnents ayenge
 
-    const [user , setUser] = React.useState(null)   // this is the data which will be accessed by the children components
+    const [user , setUser] = useState(null)   // this is the data which will be accessed by the children components
     return(
-        <UserContext.Provider value={{user ,setUser}}>
+        <UserContext.Provider value={{user ,setUser}}>  
         {children}
         </UserContext.Provider>
     )

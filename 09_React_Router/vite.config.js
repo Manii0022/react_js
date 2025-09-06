@@ -7,4 +7,5 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  base: process.env.VITE_BASE_PATH || "/react_js/tree/main/09_React_Router"
 })

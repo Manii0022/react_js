@@ -8,7 +8,7 @@ function App() {
   return (
     <UserContextProvider>
 
-      <h1>hello</h1>    {/* h1 Login Profile..these are the children jo ki UserContextProvider = ({children})=>{}  me placeholder the */}
+      <h1>hello</h1>    {/* h1, Login, Profile..these are the children jo ki UserContextProvider = ({children})=>{}  me placeholder the */}
       <Login/>
       <Profile/>
 
